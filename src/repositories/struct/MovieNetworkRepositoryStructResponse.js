@@ -1,4 +1,4 @@
-class PopularMovieNetworkRepositoryStructResponse {
+class MovieNetworkRepositoryStructResponse {
   /**
    *
    * @type {string}
@@ -18,7 +18,7 @@ class PopularMovieNetworkRepositoryStructResponse {
   voteCount = "";
 }
 
-const mapPopularMovieNetworkRepositoryStructResponse = {
+const mapMovieNetworkRepositoryStructResponse = {
   adult: "adult",
   backdropPath: "backdrop_path",
   genreMovie: "genre_ids",
@@ -35,6 +35,6 @@ const mapPopularMovieNetworkRepositoryStructResponse = {
 };
 
 export {
-  PopularMovieNetworkRepositoryStructResponse,
-  mapPopularMovieNetworkRepositoryStructResponse,
+  MovieNetworkRepositoryStructResponse,
+  mapMovieNetworkRepositoryStructResponse,
 };

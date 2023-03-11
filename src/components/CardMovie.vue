@@ -18,9 +18,7 @@
             viewBox="0 0 473.486 473.486"
             v-for="i in 5"
             :key="i"
-            :class="
-              i <= Number(voteAverage) / 2 ? 'text-yellow-400' : 'text-gray-600'
-            "
+            :class="i <= voteAverage / 2 ? 'text-yellow-400' : 'text-gray-600'"
             class="h-4 w-4 fill-current mr-1"
           >
             <path
@@ -31,6 +29,11 @@
         <p class="text-gray-700 text-sm mt-1">
           {{ voteAverage * 10 }} % {{ date }}
         </p>
+      </div>
+      <div class="px-4 pb-4">
+        <span class="text-sm text-gray-700 mr-2">{{
+          movieGenre(genreMovie)
+        }}</span>
       </div>
     </div>
   </div>
@@ -57,6 +60,28 @@ export default {
     voteAverage: {
       type: Number,
       required: true,
+    },
+    listGenre: {
+      type: Array,
+      required: true,
+    },
+    genreMovie: {
+      type: Array,
+      required: true,
+    },
+  },
+  methods: {
+    movieGenre(genreMovie) {
+      let movieGenres = "";
+      this.listGenre
+        .filter(function (genre) {
+          return genreMovie.indexOf(genre.id) > -1;
+        })
+        .forEach(function (genre, index) {
+          movieGenres += genre.name;
+          if (genreMovie.length > index + 1) movieGenres += ", ";
+        });
+      return movieGenres;
     },
   },
   computed: {
