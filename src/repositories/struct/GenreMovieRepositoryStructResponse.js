@@ -1,9 +1,10 @@
 class GenreMovieRepositoryStructResponse {
   id = "";
-  name = "";
+  genreName = "";
 }
 
 const mapGenreMovieNetworkStructResponse = {
+  id: "id",
   genreName: "name",
 };
 export {

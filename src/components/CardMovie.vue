@@ -78,7 +78,7 @@ export default {
           return genreMovie.indexOf(genre.id) > -1;
         })
         .forEach(function (genre, index) {
-          movieGenres += genre.name;
+          movieGenres += genre.genreName;
           if (genreMovie.length > index + 1) movieGenres += ", ";
         });
       return movieGenres;
